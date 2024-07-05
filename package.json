@@ -1,8 +1,11 @@
 {
   "name": "cfrag",
+  "type": "module",
   "scripts": {
-    "dev": "wrangler dev src/index.ts",
-    "deploy": "wrangler deploy --minify src/index.ts"
+    "dev": "vite",
+    "build": "vite build --mode client && vite build",
+    "preview": "wrangler pages dev",
+    "deploy": "$npm_execpath run build && wrangler pages deploy"
   },
   "dependencies": {
     "hono": "^4.4.11",
